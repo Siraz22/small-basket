@@ -9,23 +9,7 @@ import { SupabaseService } from 'src/service/supabase.service';
 export class TempComponentComponent implements OnInit {
   constructor(private supabaseService: SupabaseService) {}
 
+  items: any = null;
+
   ngOnInit() {}
-
-  // async fetchItems() {
-  //   const { data, error } = await this.supabaseService.supabase
-  //     .from('item')
-  //     .select('*');
-
-  //   if (error) {
-  //     console.error('Error fetching data:', error.message);
-  //   } else {
-  //     console.log('Fetched data:', data);
-  //   }
-  // }
-
-  fetchItems(): void {
-    this.supabaseService.getItems().subscribe((data) => {
-      console.log(data);
-    });
-  }
 }
